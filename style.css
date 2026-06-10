@@ -5,11 +5,10 @@ body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; mar
 
 nav { padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 10; }
 
-/* FIX: Ensure buttons have higher Z-index and active pointers */
 a, button { position: relative; z-index: 100; cursor: pointer; text-decoration: none; }
 
 .btn-main { background: linear-gradient(90deg, var(--blue), var(--purple)); padding: 12px 24px; border-radius: 8px; color: white; border: none; }
 .btn-sub { background: rgba(255,255,255,0.05); padding: 12px 24px; border-radius: 8px; color: white; border: 1px solid rgba(255,255,255,0.1); }
 
-.auth-box { margin: auto; padding: 40px; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; }
+.auth-box { margin: auto; padding: 40px; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; text-align: center; }
 input { width: 100%; padding: 15px; margin: 10px 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; box-sizing: border-box; }
