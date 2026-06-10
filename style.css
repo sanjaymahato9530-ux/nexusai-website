@@ -1,14 +1,20 @@
 :root { --bg: #030303; --blue: #00d4ff; --purple: #9d00ff; }
-body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; min-height: 100vh; }
 
-.mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; background: radial-gradient(circle at 50% 50%, #1a0b2e, #030303); }
+.mesh-bg { 
+    position: fixed; top:0; left:0; width:100%; height:100%; z-index: -1; pointer-events: none; 
+    background: radial-gradient(circle at 50% 50%, #1a0b2e, #030303); 
+}
 
-nav { padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 10; }
+/* Ensure Auth box matches Homepage theme */
+.auth-box { 
+    margin: 100px auto; padding: 40px; width: 90%; max-width: 400px;
+    background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); 
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; text-align: center;
+}
 
-a, button { position: relative; z-index: 100; cursor: pointer; text-decoration: none; }
+.btn-main { background: linear-gradient(90deg, var(--blue), var(--purple)); padding: 12px 24px; border-radius: 8px; color: white; border: none; cursor: pointer; }
 
-.btn-main { background: linear-gradient(90deg, var(--blue), var(--purple)); padding: 12px 24px; border-radius: 8px; color: white; border: none; }
-.btn-sub { background: rgba(255,255,255,0.05); padding: 12px 24px; border-radius: 8px; color: white; border: 1px solid rgba(255,255,255,0.1); }
+/* Responsive fix */
+@media (max-width: 768px) { .nav-links { display: none; } }
 
-.auth-box { margin: auto; padding: 40px; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; text-align: center; }
-input { width: 100%; padding: 15px; margin: 10px 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; box-sizing: border-box; }
