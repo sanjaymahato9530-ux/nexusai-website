@@ -15,3 +15,12 @@
  transform:translateY(-10px);
  transition:.3s;
 }
+body::before{
+ content:'';
+ position:fixed;
+ width:500px;
+ height:500px;
+ background:#7c3aed;
+ filter:blur(200px);
+ opacity:.25;
+}
