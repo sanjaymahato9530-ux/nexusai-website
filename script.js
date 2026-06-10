@@ -1,16 +1,20 @@
-// Premium scroll reveal and interaction
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-        }
+// FIX: Ensure DOM is fully loaded before attaching listeners
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Smooth Scroll Fix
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
     });
-});
 
-document.querySelectorAll('.card, section').forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(40px)';
-    el.style.transition = 'all 1s cubic-bezier(0.16, 1, 0.3, 1)';
-    observer.observe(el);
+    // Form Handling
+    const form = document.getElementById('contactForm');
+    if(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Request received!');
+        });
+    }
 });
