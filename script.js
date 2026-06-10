@@ -1,11 +1,11 @@
-// Form Submission Logic
+// Form handling
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Thank you for reaching out to NexusAI. We will contact you shortly.');
+    alert('NexusAI request received. Our team will contact you shortly.');
     e.target.reset();
 });
 
-// Scroll Reveal Effect
+// Scroll Reveal Observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -15,9 +15,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-document.querySelectorAll('.card').forEach(card => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.8s ease-out';
-    observer.observe(card);
+document.querySelectorAll('.card, section').forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(50px)';
+    el.style.transition = 'all 0.8s ease-out';
+    observer.observe(el);
 });
