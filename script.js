@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for hash links
+    // Smooth scrolling for navigation links on the homepage
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 });
