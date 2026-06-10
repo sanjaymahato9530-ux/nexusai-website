@@ -1,13 +1,21 @@
-document.getElementById('authForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI | Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mesh-bg"></div>
+    <div class="auth-box">
+        <h2>NexusAI</h2>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn-main">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
 
-    try {
-        // Use sign-up or log-in function
-        await signUp(email, password); 
-        window.location.href = 'dashboard.html';
-    } catch (err) {
-        alert(err.message);
-    }
-});
