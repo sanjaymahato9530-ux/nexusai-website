@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><title>Dashboard | NexusAI</title><link rel="stylesheet" href="style.css"></head>
+<head><title>Dashboard</title><link rel="stylesheet" href="style.css"></head>
 <body>
-    <div class="mesh-bg"></div>
     <div class="glass-box">
-        <h1>Welcome to NexusAI Dashboard</h1>
-        <button id="logoutBtn" class="btn-sub">Logout</button>
+        <h1>Welcome to your Dashboard</h1>
+        <button onclick="supabase.auth.signOut().then(() => window.location.href='login.html')">Logout</button>
     </div>
-    <script>
-        document.getElementById('logoutBtn').onclick = async () => {
-            await _supabase.auth.signOut();
-            window.location.href = 'login.html';
-        };
-    </script>
 </body>
 </html>
 
