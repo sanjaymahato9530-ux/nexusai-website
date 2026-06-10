@@ -6,3 +6,8 @@
   font-weight: 700;
   box-shadow: 0 0 25px rgba(168,85,247,.5);
 }
+.features {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
