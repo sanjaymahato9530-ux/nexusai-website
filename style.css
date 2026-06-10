@@ -1,120 +1,49 @@
-/* NexusAI Premium Styling */
-
 :root {
-    --bg-dark: #050505;
+    --bg: #050505;
     --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --neon-blue: #00d4ff;
-    --neon-purple: #9d00ff;
-    --text-main: #ffffff;
-    --text-dim: #a0a0a0;
-    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+    --border: rgba(255, 255, 255, 0.1);
+    --blue: #00d4ff;
+    --purple: #9d00ff;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
+    background: var(--bg);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
     overflow-x: hidden;
 }
 
-/* Background Glow Animation */
-body::before {
-    content: "";
+.glow-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background: radial-gradient(circle at 50% 50%, #1a0b2e, #050505);
     z-index: -1;
 }
 
-/* Glassmorphism Cards */
+nav { padding: 30px 10%; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: 800; }
+.logo span { color: var(--blue); }
+
+.hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.text-gradient { background: linear-gradient(90deg, var(--blue), var(--purple)); -webkit-background-clip: text; color: transparent; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 10%; }
+
 .card {
     background: var(--glass);
     backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
+    border: 1px solid var(--border);
     padding: 40px;
-    transition: var(--transition);
+    border-radius: 24px;
+    transition: 0.4s;
 }
 
-.card:hover {
-    border-color: var(--neon-blue);
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
-}
+.card:hover { border-color: var(--blue); transform: translateY(-10px); }
 
-/* Premium Buttons */
-.btn-premium {
-    padding: 16px 32px;
-    border-radius: 50px;
-    border: none;
-    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
-    display: inline-block;
-}
+.btn-main { background: linear-gradient(45deg, var(--blue), var(--purple)); padding: 15px 30px; border-radius: 50px; text-decoration: none; color: #fff; font-weight: bold; }
 
-.btn-premium:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
-}
+form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px; padding: 20px; }
+input, textarea { background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 20px; border-radius: 15px; color: #fff; }
 
-/* Hero Section Animations */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 5%;
-}
-
-.hero h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    background: linear-gradient(to right, #fff, var(--neon-blue));
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-bottom: 20px;
-}
-
-/* Responsive Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 80px 5%;
-}
-
-/* Form Styling */
-input, textarea {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    padding: 20px;
-    border-radius: 12px;
-    color: white;
-    margin-bottom: 20px;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--neon-purple);
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .grid { padding: 40px 5%; }
-    .hero h1 { font-size: 2.5rem; }
-}
+@media (max-width: 768px) { .nav-links { display: none; } }
