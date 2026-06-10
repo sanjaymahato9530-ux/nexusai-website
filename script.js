@@ -1,20 +1,10 @@
-// FIX: Ensure DOM is fully loaded before attaching listeners
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Smooth Scroll Fix
+    // Smooth scrolling for hash links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
     });
-
-    // Form Handling
-    const form = document.getElementById('contactForm');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Request received!');
-        });
-    }
 });
