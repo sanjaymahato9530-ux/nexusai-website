@@ -40,10 +40,32 @@
     </header>
 
     <script>
-        function startAutomation() {
-            console.log("Automation sequence initializing...");
-            alert("Simulation Mode: Content Automation Engine started!");
+    async function startAutomation() {
+        const API_KEY = "AIzaSyArQFb-O9AxKsZNrfCZjPmQEDt2qbgtAko"; // <--- Apni key yahan daalein
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+
+        alert("Automation shuru ho rahi hai... please wait.");
+
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: "Ek professional marketing article likho AI automation ke baare mein." }] }]
+                })
+            });
+
+            const data = await response.json();
+            const resultText = data.candidates[0].content.parts[0].text;
+            
+            // Result ko screen par dikhane ke liye
+            alert("AI ka jawab: " + resultText.substring(0, 100) + "...");
+            console.log(resultText);
+        } catch (error) {
+            console.error("Error:", error);
+            alert("API Key check karein ya server down hai.");
         }
+    }
     </script>
 </body>
 </html>
